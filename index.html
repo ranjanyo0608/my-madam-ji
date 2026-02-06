@@ -14,21 +14,21 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #ff6f91, #ff9a9e, #fad0c4);
   background-size: 300% 300%;
-  animation: bg 10s ease infinite;
+  animation: bgMove 10s ease infinite;
   overflow: hidden;
 }
 
-@keyframes bg {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .card {
   background: rgba(255,255,255,0.95);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  padding: 32px;
+  border-radius: 22px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.3);
   max-width: 360px;
   text-align: center;
   z-index: 2;
@@ -38,18 +38,17 @@ h1 {
   font-size: 24px;
   font-weight: bold;
   color: #c9184a;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-#text {
+p {
   font-size: 16px;
   color: #333;
-  line-height: 1.6;
-  min-height: 140px;
+  line-height: 1.7;
 }
 
 .name {
-  margin-top: 15px;
+  margin-top: 18px;
   font-size: 18px;
   font-weight: bold;
   color: #a4133c;
@@ -59,50 +58,39 @@ h1 {
 .float {
   position: absolute;
   font-size: 24px;
-  animation: floatUp 7s infinite;
+  animation: floatUp 7s infinite ease-in-out;
   opacity: 0.8;
 }
 
 @keyframes floatUp {
-  0% {transform: translateY(100vh); opacity: 0;}
-  50% {opacity: 1;}
-  100% {transform: translateY(-10vh); opacity: 0;}
+  0% { transform: translateY(100vh); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- Floating hearts & kisses -->
 <div class="float" style="left:10%;">💖</div>
-<div class="float" style="left:30%; animation-delay:2s;">💋</div>
-<div class="float" style="left:55%; animation-delay:4s;">💕</div>
-<div class="float" style="left:75%; animation-delay:1s;">😘</div>
+<div class="float" style="left:28%; animation-delay:2s;">💋</div>
+<div class="float" style="left:50%; animation-delay:4s;">💕</div>
+<div class="float" style="left:72%; animation-delay:1s;">😘</div>
 
 <div class="card">
   <h1>Happy Rose Day My Wifey 💍❤️</h1>
-  <div id="text"></div>
-  <div class="name">— Riya</div>
+
+  <p>
+    I’m sorry, babe, I can’t meet you today and give you the rose you truly deserve, my love 🥹❤️
+    <br><br>
+    But your man loves you more than anything, ba 🧿🫀
+    <br><br>
+    Meri madam ji 😌❤️
+  </p>
+
+  <div class="name">— your lambu 🦍❤️</div>
 </div>
-
-<script>
-const message = 
-"I’m sorry, babe, I can’t meet you today and give you the rose you truly deserve, my love 🥹❤️\n\n" +
-"But your man loves you more than anything, ba 🧿🫀\n\n" +
-"Meri madam ji 😌❤️";
-
-let i = 0;
-const speed = 40;
-
-function typeText() {
-  if (i < message.length) {
-    document.getElementById("text").innerHTML +=
-      message[i] === "\n" ? "<br>" : message[i];
-    i++;
-    setTimeout(typeText, speed);
-  }
-}
-typeText();
-</script>
 
 </body>
 </html>
